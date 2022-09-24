@@ -21,6 +21,7 @@ function btnEncriptar(){
         outTexto.value = "";
         imgEspera.style.visibility = "visible";
         inTexto.value = "";
+        copiarbt.style.visibility = "hidden"
     }
 }
 
@@ -36,6 +37,7 @@ function btnDesencriptar(){
         outTexto.value = "";
         imgEspera.style.visibility = "visible";
         inTexto.value = "";
+        copiarbt.style.visibility = "hidden"
     }
 }
 

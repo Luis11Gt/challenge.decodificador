@@ -52,7 +52,7 @@ body{
 
     border-radius: 0.5em;
     border: none;
-    visibility: visible;
+    visibility: hidden;
 }
 
 .borrar:hover{
