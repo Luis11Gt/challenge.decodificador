@@ -4,19 +4,20 @@ textarea{
 }
 
 header{
-    margin: 10px;
-}
-
-body{
-    background: #F3F5FC;
-
+    margin: 0 auto;
+    width: 940px;
 }
 
 .imagen-letra{
     display: block;
     position: relative;
     top: 40px;
-    margin-left: 10px;  
+    margin-left: 30px; 
+    z-index: 1;
+}
+
+body{
+    background: #F3F5FC;
 }
 
 .contenido-principal{
@@ -24,6 +25,7 @@ body{
     margin: 0 auto;
     display: block;
     text-align: center;  
+    position: relative;
 }
 
 .entrada{
@@ -50,7 +52,7 @@ body{
 
     border-radius: 0.5em;
     border: none;
-    opacity: 0%;
+    visibility: visible;
 }
 
 .borrar:hover{
@@ -58,16 +60,16 @@ body{
     transition: 1s;
 }
 
-.entrada h2{
+/* .entrada h2{
     position: relative;
     top: 50px;
     left: -110px;
     font-family: 'Inter', sans-serif;
     font-size: 1.5em;
     color: #0A3871;
-}
+} */
 
-.entrada textarea{
+.entrada-texto{
     width: 450px;
     height: 400px;
     background: #F3F5FC;
@@ -77,22 +79,32 @@ body{
     font-size: 1.5em;
     font-family: 'Inter', sans-serif;
     color: #0A3871;
+    border: none;
 }
 
-.entrada textarea{
-    border: none;
+.aviso{
+    width: 450px;
+    margin: 0.5em 7%;
+    text-align: justify;
+}
+
+.aviso img, p{
+    display: inline-block;
+    text-align: justify;
 }
 
 .salida{
     display: inline-block;
+    
     width: 270px;
     margin: 0 4%;
+    position: relative;
+    bottom: -20px;
 }
 
 .texto-espera{
     position: absolute;
     width: 280px;
-
 }
 
 .texto-espera img{
@@ -123,24 +135,10 @@ body{
     border: none;
     padding: 1em;
 
+    position: static;
     font-size: 1em;
     font-family: 'Inter', sans-serif;
     color: #495057;
-}
-
-.aviso{
-    width: 940px;
-    margin: 0.5em 7%;
-    text-align: justify;
-}
-
-.aviso img, p{
-    display: inline-block;
-    text-align: justify;
-}
-
-.botones{
-    width: 940px; 
 }
 
 .botones input{
@@ -165,7 +163,21 @@ body{
 }
 
 .boton-copiar{
-    margin-left: 180px;
+    text-align: center;
+    margin-top: 0.5em;
+    width: 15em;
+    height: 3em;
+    border-radius: 24px;
+    font-family: 'Inter', sans-serif;
+
+    position: absolute;
+    bottom: 10px;
+    left: 45px;
+    z-index: 10;
+    
+    text-align: center;
+
+    visibility: hidden;
 }
 
 .boton-encriptar:hover{
@@ -190,10 +202,160 @@ footer{
 }
 
 @media screen and (max-width:768px) {
+
+    header {
+        width: 700px;
+    }
+
     .contenido-principal{
         width: 700px;
-        margin: 0 auto;
-        display: block;
-        text-align: center;
+        top: 10px;
     }
+
+    .borrar{
+        left: 610px;
+    }
+
+    .entrada-texto{
+        width: 600px;
+    }
+
+    .aviso p{
+        font-size: 1.1em;
+    }
+
+    .botones input{
+        width: 19em;
+        height: 5;
+        font-size: 1em;
+    }
+
+    .salida{
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    .salida-texto{
+        width: 600px;
+        height: 270px;
+    }
+
+    .texto-espera{
+        width: 600px;
+        left: 50px;
+        margin-top: 0.5em;
+    }
+
+    .texto-espera h2, .texto-espera h3{
+        width: 600px;
+    }
+
+    .texto-espera img{
+        /* display: none; */
+        width: 200px;
+        margin: 0;
+    }
+
+
+    .boton-copiar{
+        width: 32em;
+        height: 5;
+        font-size: 1em;
+        left: 100px;
+    }
+
+
+    footer{
+        width: 700px;
+        margin: 0px auto;
+        margin-top: 35px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width:430px) {
+
+    header{
+        width: 310px;
+    }
+
+    .contenido-principal{
+        width: 300px;
+        margin: 0 auto;
+    }
+    
+    .entrada{
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .borrar{
+        position: relative;
+        left: 120px;
+        display: inline-block;
+    }
+
+    .entrada-texto{
+        width: 270px;
+        padding: 0.3em;
+    }
+
+    .botones{
+        margin: 0 auto;
+    }
+
+    .botones input{
+        width: 18em;
+    }
+
+    .boton-encriptar{
+        margin: 0 auto;
+    }
+
+    .boton-desencriptar{
+        margin: 0 auto;
+    }
+
+    .aviso{
+        width: 280px;
+    }
+
+    .salida{
+        width: 300px;
+        margin: 0px auto;
+        bottom: -10px;
+    }
+
+    .texto-espera{
+        width: 280px;
+        left: 10px;
+    }
+
+    .texto-espera h2, .texto-espera h3{
+        width: 250px;
+    } 
+
+    .texto-espera img{
+        display: none;
+    }
+
+    .salida-texto{
+        width: 270px;
+
+    }
+
+    .boton-copiar{
+        width: 15em;
+        left: 35px;
+    }
+
+    footer{
+        width: 300px;
+        margin: 0px auto;
+        margin-top: 35px;
+        margin-bottom: 10px;
+    }
+
 }

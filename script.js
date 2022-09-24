@@ -3,6 +3,8 @@ const inTexto = document.querySelector(".entrada-texto")
 const outTexto = document.querySelector(".salida-texto")
 const imgEspera = document.querySelector(".texto-espera")
 const borrador = document.querySelector(".borrar")
+const copiarbt = document.querySelector(".boton-copiar")
+
 
 var letra = ["a","e","i","o","u"];
 var codigo = ["ai","enter","imes","ober","ufat"];
@@ -11,12 +13,13 @@ function btnEncriptar(){
     if (inTexto.value != "") {
         const textoEncriptado = encriptar(inTexto.value);
         outTexto.value = textoEncriptado;
-        imgEspera.style.opacity = "0%";
+        imgEspera.style.visibility = "hidden";
+        borrador.style.visibility = "hidden";
         inTexto.value = "";
-        borrador.style.opacity = "0%";
+        copiarbt.style.visibility = "visible"
     }else{
         outTexto.value = "";
-        imgEspera.style.opacity = "100%";
+        imgEspera.style.visibility = "visible";
         inTexto.value = "";
     }
 }
@@ -25,32 +28,38 @@ function btnDesencriptar(){
     if (inTexto.value != "") {
         const textoDesencriptado = desencriptar(inTexto.value);
         outTexto.value = textoDesencriptado;
-        imgEspera.style.opacity = "0%";
+        imgEspera.style.visibility = "hidden";
         inTexto.value = "";
-        borrador.style.opacity = "0%";
+        borrador.style.visibility = "hidden";
+        copiarbt.style.visibility = "visible"
     } else {
         outTexto.value = "";
-        imgEspera.style.opacity = "100%";
+        imgEspera.style.visibility = "visible";
         inTexto.value = "";
     }
 }
 
 function btnCopiar(){
     outTexto.select();
-    navigator.clipboard.writeText(outTexto.value);
-    outTexto.value = "";
-    imgEspera.style.opacity = "100%";
+    if (outTexto.value != "") {
+        navigator.clipboard.writeText(outTexto.value);
+        outTexto.value = "";
+        imgEspera.style.visibility = "visible";
+        copiarbt.style.visibility = "hidden"    
+    }
+    
 }
 
 function aparecer(){
-    borrador.style.opacity = "100%";
+    borrador.style.visibility = "visible";
 }
 
 function btnBorrar(){
     inTexto.value = "";
     outTexto.value = "";
-    imgEspera.style.opacity = "100%";
-    borrador.style.opacity = "0%";
+    imgEspera.style.visibility = "visible";
+    borrador.style.visibility = "hidden";
+    copiarbt.style.visibility = "hidden"
 }
 
 

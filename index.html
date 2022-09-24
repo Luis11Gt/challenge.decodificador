@@ -14,25 +14,35 @@
 
     </head>
 
-    <body>
+    <body>  
         <header>
-
+            <img src="Imagenes/Vector.png" class="imagen-letra" alt="Logo Alura, letra incial a">
         </header>
 
         <main>
 
             <div class="contenido-principal">
-    
-                <img src="Imagenes/Vector.png" class="imagen-letra" alt="Logo Alura, letra incial a">
 
                 <section class="entrada">
     
                     <input type="button" value="x" class="borrar" onclick="btnBorrar()">
 
                     <textarea cols="60%" rows="28%" class="entrada-texto" placeholder="Ingrese el texto aquí." onclick="aparecer()"></textarea>
+
+                    <div class="aviso">
+                        <img src="Imagenes/Vectorex.png" class="imagen-exclamacion">
+    
+                        <p>Solo letras minúsculas y sin acentos</p>
+                    </div>
+
+                    <div class="botones">
+                        <input type="button" value="Encriptar" name="encriptar" class="boton-encriptar" onclick="btnEncriptar()">
+                    
+                        <input type="button" value="Desencriptar" name="desencriptar" class="boton-desencriptar" onclick="btnDesencriptar()">
+                    </div>
     
                 </section>
-    
+ 
                 <section class="salida">
 
                     <div class="texto-espera">
@@ -41,27 +51,15 @@
                             <h2>Ningun mensaje fue encontrado.</h2>
                             
                             <h3>Ingresa el texto que deseas encriptar o desencriptar</h3>
+
                     </div>
-    
+
                     <textarea cols="35%" rows="32%" class="salida-texto" readonly></textarea>
 
+                    <input type="button" value="Copiar" name="copiar" class="boton-copiar" onclick="btnCopiar()">
+
                 </section>
-    
-                <div class="aviso">
-                    <img src="Imagenes/Vectorex.png" class="imagen-exclamacion">
 
-                    <p>Solo letras minúsculas y sin acentos</p>
-                </div>
-
-                <section class="botones">
-    
-                        <input type="button" value="Encriptar" name="encriptar" class="boton-encriptar" onclick="btnEncriptar()">
-                        
-                        <input type="button" value="Desencriptar" name="desencriptar" class="boton-desencriptar" onclick="btnDesencriptar()">
-
-                        <input type="button" value="Copiar" name="copiar" class="boton-copiar" onclick="btnCopiar()">
-    
-                </section>
             </div>
 
         </main>
